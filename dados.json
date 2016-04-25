@@ -1,0 +1,48 @@
+[{
+		"dt": 1461391200,
+		"temp": 13.84,
+		"temp_min": 13.84,
+		"temp_max": 14.55,
+		"pressure": 915.27,
+		"sea_level": 1027.64,
+		"grnd_level": 915.27,
+		"humidity": 86,
+		"temp_kf": -0.71,
+		"id": 800,
+		"main": "Clear",
+		"description": "clear sky",
+		"icon": "01n"
+	},
+
+	{
+		"dt": 1461402000,
+		"temp": 12.56,
+		"temp_min": 12.56,
+		"temp_max": 13.24,
+		"pressure": 915.51,
+		"sea_level": 1028.19,
+		"grnd_level": 915.51,
+		"humidity": 86,
+		"temp_kf": -0.67,
+		"id": 800,
+		"main": "Clear",
+		"description": "clear sky",
+		"icon": "01n"
+	},
+
+	{
+		"dt": 1461412800,
+		"temp": 21.25,
+		"temp_min": 21.25,
+		"temp_max": 21.89,
+		"pressure": 917.07,
+		"sea_level": 1029.08,
+		"grnd_level": 917.07,
+		"humidity": 79,
+		"temp_kf": -0.63,
+		"id": 800,
+		"main": "Clear",
+		"description": "clear sky",
+		"icon": "01d"
+	}
+]

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>amCharts tutorial: Loading external data</title>
+  <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+  <script src="http://www.amcharts.com/lib/3/serial.js"></script>
+  <script src="http://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+</head>
+<body>
+  <div id="chartdiv" style="width: 100%; height: 500px;"></div>
+  <script>
+  var chart = AmCharts.makeChart( "chartdiv", {
+    "type": "serial",
+    "dataLoader": {
+      "url": "data.json"
+    },
+    "pathToImages": "http://www.amcharts.com/lib/images/",
+    "categoryField": "day",
+    "startDuration": 1,
+
+    "graphs": [ {
+      "valueField": "value",
+      "bullet": "round",
+      "bulletBorderColor": "#FFFFFF",
+      "bulletBorderThickness": 2,
+      "lineThickness ": 2,
+      "lineAlpha": 0.5
+    } ]
+  } );
+
+  </script>
+</body>
+</html>

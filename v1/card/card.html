@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Card Weather</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons-wind.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="card.css">
+
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="http://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+        <div class="row">
+            <div class="col-md-9">
+                <div class="blockHead">
+                    <p>Hoje</p>
+                </div>
+                <div class="blockBody">
+                    <p id="location"></p>
+                    <p id="owm-temp"><span class="tempAtual"></span></p>
+                    <div class="additional">
+                        <p id="owm-temp-max">Máxima: <span class="tempMaxima"></span></p>
+                        <p id="owm-temp-min">Mínima: <span class="tempMinima"></span></p>
+                        <p id="owm-humidity"><i class="wi wi-humidity"></i> <span class="umidadeAtual"></span></p>
+                    </div>
+                    <div class="icon-block">
+                        <i id="iconCondicaoAtual"></i>
+                        <p id="descricaoCondicaoAtual"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">    
+                <div class="col-md-9">
+                    <section id="chart">
+                        <div class="chart-block">
+                            <div id="chartdiv" style="vertical-align: middle; display: inline-block; width: 100%; height: 50px;"></div> 
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    
+            <!-- ###################################################################################################################### -->
+
+        <div class="row">
+            <div class="col-md-3 card">
+                <p id="dataDia1"></p>
+                <p><i class="wi wi-direction-up"></i><span class="tempMaximaDia1"></span></p>
+                <p><i class="wi wi-direction-down"></i><span class="tempMinDia1"></span></p>
+                <div class="posicionamentoIcon"><span class="iconeDia1"></span></div>
+                <p id="condicaoDia1"></p>    
+            </div>
+            <div class="col-md-3 card">
+                <p id="dataDia2"></p>
+                <p><i class="wi wi-direction-up"></i><span class="tempMaximaDia2"></span></p>
+                <p><i class="wi wi-direction-down"></i><span class="tempMinDia2"></span></p>
+                <div class="posicionamentoIcon"><span class="iconeDia2"></span></div>
+                <p id="condicaoDia2"></p>    
+            </div>
+            <div class="col-md-3 card">
+                <p id="dataDia3"></p>
+                <p><i class="wi wi-direction-up"></i><span class="tempMaximaDia3"></span></p>
+                <p><i class="wi wi-direction-down"></i><span class="tempMinDia3"></span></p>
+                <div class="posicionamentoIcon"><span class="iconeDia3"></span></div>
+                <p id="condicaoDia3"></p>    
+            </div>
+        </div>
+        <div class="row ajusteRow">
+            <div class="col-md-3 card">
+                <p id="dataDia4"></p>
+                <p><i class="wi wi-direction-up"></i><span class="tempMaximaDia4"></span></p>
+                <p><i class="wi wi-direction-down"></i><span class="tempMinDia4"></span></p>
+                <div class="posicionamentoIcon"><span class="iconeDia4"></span></div>
+                <p id="condicaoDia4"></p>    
+            </div>
+            <div class="col-md-3 card">
+                <p id="dataDia5"></p>
+                <p><i class="wi wi-direction-up"></i><span class="tempMaximaDia5"></span></p>
+                <p><i class="wi wi-direction-down"></i><span class="tempMinDia5"></span></p>
+                <div class="posicionamentoIcon"><span class="iconeDia5"></span></div>
+                <p id="condicaoDia5"></p>    
+            </div>
+            <div class="col-md-3 card">
+                <p id="dataDia6"></p>
+                <p><i class="wi wi-direction-up"></i><span class="tempMaximaDia6"></span></p>
+                <p><i class="wi wi-direction-down"></i><span class="tempMinDia6"></span></p>
+                <div class="posicionamentoIcon"><span class="iconeDia6"></span></div>
+                <p id="condicaoDia6"></p>    
+            </div>
+        </div>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="card.js"></script>
+	<script src="chart.js"></script>
+</body>
+</html>

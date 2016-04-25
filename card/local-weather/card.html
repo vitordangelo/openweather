@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Card Weather</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons-wind.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+	<div class="container">
+		<div class="blockHead">
+        	<p>Hoje</p>
+        </div>
+        <div class="blockBody">
+	        <p id="location"></p>
+	        <p id="owm-temp"><span class="tempAtual"></span></p>
+	        <div class="additional">
+	            <p id="owm-temp-max">Máxima: <span class="tempMaxima"></span></p>
+	            <p id="owm-temp-min">Mínima: <span class="tempMinima"></span></p>
+	            <p id="owm-humidity"><i class="wi wi-humidity"></i> <span class="umidadeAtual"></span></p>
+	        </div>
+	        <div class="icon-block">
+	            <i id="iconCondicaoAtual"></i>
+	            <p id="descricaoCondicaoAtual"></p>
+	        </div>
+        </div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+
+	<!-- JSON Current -->
+	<script>
+		moment();
+		$(document).ready(function(){
+			$.getJSON("http://api.openweathermap.org/data/2.5/weather?id=3449847&units=metric&appid=5ecaf23c84f1aaf3b1cf9816b82ca8e8",
+			function(result){
+    			
+				var cidade = result.name;
+				var tempAtual = result.main.temp;
+				var umidadeAtual = result.main.humidity;
+				var tempMaxima = result.main.temp_max;
+				var tempMinima = result.main.temp_min;
+				var condicaoAtual = result.weather[0].description;
+
+    			console.log(condicaoAtual);
+
+    			$('.tempAtual').text(tempAtual.toFixed(1)+"°C");
+    			$('.umidadeAtual').text(umidadeAtual+"%");
+    			$('.tempMaxima').text(tempMaxima);
+    			$('.tempMinima').text(tempMinima);
+    			$('#location').text(cidade);
+
+    			//condicaoAtual = "thunderstorm";
+    			if (condicaoAtual == "clear sky") {
+    				$('#iconCondicaoAtual').addClass('wi wi-owm-day-800');
+    				$('#descricaoCondicaoAtual').text("Ensolarado");
+    			}
+    			if (condicaoAtual == "few clouds") {
+    				$('#iconCondicaoAtual').addClass('wi wi-day-cloudy');
+    				$('#descricaoCondicaoAtual').text("Poucas Nuvens");
+    			}
+    			if (condicaoAtual == "scattered clouds") {
+    				$('#iconCondicaoAtual').addClass('wi wi-day-cloudy');
+    				$('#descricaoCondicaoAtual').text("Nuvens Carregadas");
+    			}
+    			if (condicaoAtual == "rain") {
+    				$('#iconCondicaoAtual').addClass('wi wi-day-rain');
+    				$('#descricaoCondicaoAtual').text("Chuva");
+    			}
+    			if (condicaoAtual == "thunderstorm") {
+    				$('#iconCondicaoAtual').addClass('wi wi-day-thunderstorm');
+    				$('#descricaoCondicaoAtual').text("Tepestade");
+    			}
+
+			});
+		});
+
+	</script>
+
+</body>
+</html>

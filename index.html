@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery - Ajax</title>
+</head>
+<body>
+
+	<button id="botao-limpa">Limpa</button>
+
+	<p></p>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+	
+	<script>
+		moment();
+		$(document).ready(function(){
+			$.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=3449847&units=metric&appid=5ecaf23c84f1aaf3b1cf9816b82ca8e8",
+			function(result){
+			
+    			console.log("City: "+result.city.name);
+    			console.log("Weather: "+ result.list[0].weather[0].description);
+    			console.log("Temp: "+ result.list[0].main.temp);
+    			console.log("Data: "+ result.list[0].dt);
+
+    			var dateString = moment.unix(result.list[0].dt).format("DD/MM/YYYY HH:mm");
+    			console.log(result);
+    			
+        		var conteudo = "Cidade: " + result.city.name + " - Temperatura: " + result.list[0].main.temp + " ";
+    			$("p").text(conteudo);
+			});
+		});
+
+		$('#botao-limpa').click(function(){
+			$("p").empty();
+		});
+	</script>
+
+</body>
+</html>

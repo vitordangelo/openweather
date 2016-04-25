@@ -1,0 +1,78 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+#descricaoCondicaoAtual {
+	margin-top: 16px;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.blockHead {
+  background:  rgba(255, 153, 0, 0.8);
+  text-align: left;
+}
+
+.blockHead p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+  padding: 14px 20px;
+  text-transform: uppercase;
+}
+
+.blockBody {
+  background:  rgba(255, 153, 0, 0.5);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.blockBody #location {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding: 14px 20px;
+}
+
+#owm-temp {
+  display: inline-block;
+  font-size: 100px;
+  font-weight: 800;
+  margin: 0;
+  padding: 0 20px;
+  vertical-align: top;
+}
+
+.additional {
+  display: inline-block;
+  padding: 0 20px;
+  vertical-align: top;
+}
+
+.icon-block {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+#owm-icon {
+  font-size: 80px;
+}
+
+.wind-block {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+#owm-wind-icon {
+  font-size: 80px;
+}
+
+.wi-owm-day-800, .wi-day-cloudy, .wi-day-cloudy, .wi-day-rain, .wi-day-thunderstorm {
+	font-size: 80px;
+}
+

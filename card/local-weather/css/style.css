@@ -1,0 +1,85 @@
+body {
+  /*background: url(https://drive.google.com/uc?export=download&id=0B41DdgPqKzCacHBEamd3Q2ZpYTA) no-repeat center center fixed;*/
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body h1 {
+  background:  rgba(255, 153, 0, 0.8);
+  color: #fff;
+  display: inline-block;
+  padding: 17px;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+  margin: auto;
+}
+
+.blockHead {
+  background:  rgba(255, 153, 0, 0.8);
+  text-align: left;
+}
+
+.blockHead p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+  padding: 14px 20px;
+  text-transform: uppercase;
+}
+
+.blockBody {
+  background:  rgba(255, 153, 0, 0.5);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.blockBody #location {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding: 14px 20px;
+}
+
+#owm-temp {
+  display: inline-block;
+  font-size: 100px;
+  font-weight: 800;
+  margin: 0;
+  padding: 0 20px;
+  vertical-align: top;
+}
+
+.additional {
+  display: inline-block;
+  padding: 0 20px;
+  vertical-align: top;
+}
+
+.icon-block {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+#owm-icon {
+  font-size: 80px;
+}
+
+.wind-block {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+#owm-wind-icon {
+  font-size: 80px;
+}

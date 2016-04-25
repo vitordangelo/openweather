@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery - Ajax</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<style>
+		.frio {
+			background-color: #d9edf7;
+		}
+	</style>
+
+</head>
+<body>
+
+	<button id="botao-limpa">Limpa</button>
+	
+	<div class="container">
+		<ul id="lista" class="list-group text-center">
+			
+		</ul>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+	
+	<script>
+		moment();
+		$(document).ready(function(){
+			$.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=3449847&units=metric&appid=5ecaf23c84f1aaf3b1cf9816b82ca8e8",
+			function(result){
+    			for (var i = 0; i <= result.list.length; i ++) {
+
+	    			var dateString = moment.unix(result.list[i].dt).format("DD/MM/YYYY HH:mm");
+	    			
+	        		var conteudo = result.city.name + " - " + "Temperatura: " + result.list[i].main.temp + "ºC" + " - " + "Data: " + dateString ;
+
+	        		if (result.list[i].main.temp < 18) {
+	        			$('<p>').text(conteudo).addClass("list-group-item frio").appendTo('#lista');
+	        		}
+
+	        		if (result.list[i].main.temp > 18) {
+	        			$('<p>').text(conteudo).addClass("list-group-item").appendTo('#lista');
+	        		}
+
+	    			//$('<p>').text(conteudo).addClass("list-group-item").appendTo('#lista');
+    			}
+			});
+		});
+
+		$('#botao-limpa').click(function(){
+			$("li").empty();
+		});
+	</script>
+
+</body>
+</html>
+

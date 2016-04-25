@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Micro Chart</title>
+</head>
+<body>
+	<div class="chart-block" style="padding:28px">
+  		<div id="chartdiv" style="vertical-align: middle; display: inline-block; width: 330px; height: 50px;"></div> 
+	</div>
+
+	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+	<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+  	<script src="http://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+	<script>
+		var chart = AmCharts.makeChart( "chartdiv", {
+	    "type": "serial",
+	    "dataLoader": {
+	      "url": "json.php",
+	      "format": "json"
+	    },
+	    "pathToImages": "http://www.amcharts.com/lib/images/",
+	    "categoryField": "dt",
+	    "startDuration": 1,
+	    "autoMargins": false,
+		"marginLeft": 0,
+		"marginRight": 5,
+		"marginTop": 0,
+		"marginBottom": 0,
+
+	    "graphs": [ {
+	      "valueField": "tmp",
+	      "bulletBorderThickness": 2,
+	      "lineThickness ": 1,
+	      "lineAlpha": 0.5
+	    } ]
+	  	} );
+
+	    var valueAxis = new AmCharts.ValueAxis();
+	    valueAxis.gridAlpha = 0;
+	    valueAxis.axisAlpha = 0;
+	    chart.addValueAxis(valueAxis);
+
+	    var categoryAxis = chart.categoryAxis;
+	    categoryAxis.gridAlpha = 0;
+	    categoryAxis.axisAlpha = 0;
+	    categoryAxis.startOnAxis = true;
+
+	</script>
+
+</body>
+</html>

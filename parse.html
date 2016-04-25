@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parse</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script>
+		$.ajax({
+			dataType: "json",
+			url: "http://api.openweathermap.org/data/2.5/forecast?id=3449847&units=metric&appid=5ecaf23c84f1aaf3b1cf9816b82ca8e8",
+			success: function(result) {
+			  	$.each(result, function() {
+		        	var r = this;
+		          	var conteudo = r.city;
+		          	console.log(conteudo);
+
+		       	});
+			  }
+		});
+	</script>
+
+</body>
+</html>
