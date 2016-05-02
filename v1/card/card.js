@@ -16,23 +16,23 @@ $(document).ready(function(){
 
         //condicaoAtual = "thunderstorm";
         if (condicaoAtual == "clear sky") {
-            $('#iconCondicaoAtual').addClass('wi wi-owm-day-800');
+            $('#iconCondicaoAtual').addClass('wi wi-owm-day-800 icon-grow');
             $('#descricaoCondicaoAtual').text("Ensolarado");
         }
         if (condicaoAtual == "few clouds") {
-            $('#iconCondicaoAtual').addClass('wi wi-day-cloudy');
+            $('#iconCondicaoAtual').addClass('wi wi-day-cloudy icon-grow');
             $('#descricaoCondicaoAtual').text("Algumas Nuvens");
         }
         if (condicaoAtual == "scattered clouds") {
-            $('#iconCondicaoAtual').addClass('wi wi-day-cloudy');
+            $('#iconCondicaoAtual').addClass('wi wi-day-cloudy icon-grow');
             $('#descricaoCondicaoAtual').text("Nuvens Carregadas");
         }
         if (condicaoAtual == "rain") {
-            $('#iconCondicaoAtual').addClass('wi wi-day-rain');
+            $('#iconCondicaoAtual').addClass('wi wi-day-rain icon-grow');
             $('#descricaoCondicaoAtual').text("Chuva");
         }
         if (condicaoAtual == "thunderstorm") {
-            $('#iconCondicaoAtual').addClass('wi wi-day-thunderstorm');
+            $('#iconCondicaoAtual').addClass('wi wi-day-thunderstorm icon-grow');
             $('#descricaoCondicaoAtual').text("Tepestade");
         }
 

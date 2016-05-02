@@ -1,6 +1,9 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
+
+
 <?php 
 
-	$json = file_get_contents('http://api.openweathermap.org/data/2.5/forecast?id=3449847&units=metric&appid=5ecaf23c84f1aaf3b1cf9816b82ca8e8');
+	$json = file_get_contents('http://api.openweathermap.org/data/2.5/forecast?id=3451328&units=metric&appid=5ecaf23c84f1aaf3b1cf9816b82ca8e8');
 	$obj = json_decode($json);
 
 	$weather = array
