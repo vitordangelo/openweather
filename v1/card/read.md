@@ -1,0 +1,1 @@
+http://www.unknownerror.org/opensource/openshift/origin/q/stackoverflow/10143093/origin-is-not-allowed-by-access-control-allow-origin
